@@ -12,7 +12,7 @@ def bigquery(query):
 	if query is None:
 		os.system("""echo "count,ips\n80090,34745\n80091,34746" > %s """ % tmpname)
 	else:
-		cmd = "bq -q --format=csv query --max_rows=10000000 \"%s\" > %s" % (query, tmpname)
+		cmd = "bq -q --format=csv query \"%s\" > %s" % (query, tmpname)
 		print >>l, cmd
 		l.write(cmd+"\n")
 		l.flush()
